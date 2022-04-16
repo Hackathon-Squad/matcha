@@ -17,7 +17,7 @@ const Match: NextPage = () => {
 
   const { user } = useUserContext();
 
-  return <div>matches</div>;
+  return <div className={styles["matches"]}>matches</div>;
 };
 
 export default Match;

@@ -1,4 +1,4 @@
-@use '@/styles/colors';
+@use "@/styles/colors";
 
 .find-users {
   display: flex;
@@ -21,13 +21,13 @@
       color: colors.$coffee;
       margin: 0;
     }
-  
+
     .find-user-likes {
       font-weight: 200;
       color: colors.$text;
       margin: 0;
     }
-  
+
     .find-user-shops {
       font-weight: 200;
       color: colors.$text;
@@ -53,7 +53,6 @@
         filter: saturate(2);
       }
     }
-
 
     .find-button-no {
       background-color: colors.$coffee;

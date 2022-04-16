@@ -14,18 +14,17 @@ interface UserProfileProps {
 const UserProfile: NextPage<UserProfileProps> = ({}) => {
   const router = useRouter();
   const { user } = useUserContext();
+
   useEffect(() => {
     if (!user) {
       router.replace("/");
     }
   }, [router, user]);
 
-  const [currentUser, setCurrentUser] = useState(user);
-
   return (
     <>
       <Navbar user={user} />
-      <div>user profile</div>
+      <h1>User Profile</h1>
     </>
   );
 };

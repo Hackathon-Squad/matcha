@@ -3,9 +3,7 @@ import { type NextPage } from "next";
 import { useRouter } from "next/router";
 import { FiCoffee } from "react-icons/fi";
 import { ImCross } from "react-icons/im";
-
 import Navbar from "@/components/Navbar";
-
 import styles from "./find.module.scss";
 import { useUserContext } from "@/context/UserContext";
 import { GoogleUserResponse } from "@/utils/types";
@@ -23,6 +21,7 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
     }
   }, [router, user]);
 
+  // TODO: Fetch an actual user from nearby population
   const [currentUser, setCurrentUser] = useState(user);
 
   return (
@@ -31,6 +30,7 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
       <div className={styles["find-users"]}>
         <img
           className={styles["find-user-img"]}
+          // TODO: Temporary image URL
           src="https://freepngimg.com/thumb/google/88364-brown-pusheen-rectangle-cat-free-png-hq.png"
           alt=""
         />
