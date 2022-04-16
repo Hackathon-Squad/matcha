@@ -1,8 +1,8 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const mongodb = require('mongodb');
-const cors = require('cors');
-const users = require('./routes/users');
+import express from 'express';
+import mongoose from 'mongoose';
+import mongodb from 'mongodb';
+import cors from 'cors';
+import users from './routes/users';
 
 const app = express();
 const url = `mongodb+srv://faris:wheel@cluster0.y2bnz.mongodb.net`;
@@ -12,9 +12,7 @@ app.use(express.json());
 
 app.use('/api/users', users);
 
-mongoose.connect(url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true }).then(() => {
+mongoose.connect(url).then(() => {
   console.log('Connected to MongoDB database');
 });
 
