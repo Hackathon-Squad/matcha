@@ -1,7 +1,8 @@
 {
   "name": "backend",
-  "version": "1.0.0",
-  "main": "server.js",
+  "private": true,
+  "version": "0.1.0",
+  "main": "build/server.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "tsc",
