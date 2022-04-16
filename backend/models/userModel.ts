@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const userTemplate = new mongoose.Schema({
     email: {
@@ -28,4 +28,5 @@ const userTemplate = new mongoose.Schema({
 })
 
 const User = mongoose.model('users', userTemplate);
-module.exports = User;
+
+export default User;

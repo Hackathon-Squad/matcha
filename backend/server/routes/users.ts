@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import User from '../../models/userModel';
+
 const router = express.Router();
-const User = require('../../models/userModel');
 
 router.post('/createUser', async (req, res) => {
     const {email, first_name, last_name, img_url} = req.body
@@ -36,4 +37,4 @@ router.post('/updateShops/:id', async (req, res) => {
 });
 */
 
-module.exports = router;
+export default router;

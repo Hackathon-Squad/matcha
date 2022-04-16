@@ -1,7 +1,11 @@
 {
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "start": "node ./server/server.js"
+    "build": "tsc",
+    "clean": "rm -r build",
+    "watch": "tsc -w",
+    "start": "concurrently --kill-others \"pnpm watch\" \"nodemon build/index.js\"",
+    "serve": "node build/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
