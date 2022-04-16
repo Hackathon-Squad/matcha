@@ -20,4 +20,20 @@ router.post('/getUsers', async (req, res) => {
     res.status(200).json(users);
 });
 
+/*
+router.post('/updateCoffees/:id', async (req, res) => {
+    let myUser = { _id: ObjectId( req.params.id )};
+    myUser.coffee_pref = req.body.coffee_pref;
+    const users = await myUser.save();
+    res.status(200).json(users);
+});
+
+router.post('/updateShops/:id', async (req, res) => {
+    let myUser = { _id: ObjectId( req.params.id )};
+    myUser.shop_pref = req.body.shop_pref;
+    const users = await myUser.save();
+    res.status(200).json(users);
+});
+*/
+
 module.exports = router;
