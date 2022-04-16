@@ -1,8 +1,11 @@
 @use 'src/styles/colors.scss' as colors;
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
 
-html, body {
+* {
   font-family: 'Baloo 2', cursive;
+}
+
+html, body {
   background-color: colors.$cream;
   margin: 0;
   padding: 0;
