@@ -7,29 +7,30 @@ import styles from "./index.module.scss";
 
 const Home: NextPage = () => {
   const router = useRouter();
+
+  const { user, handleSuccessfulLogin, handleFailedLogin } = useUserContext();
+
   useEffect(() => {
     if (user) {
       router.replace("/find");
     }
-  });
-
-  const { user, handleSuccessfulLogin, handleFailedLogin } = useUserContext();
+  }, [router, user]);
 
   return (
     <div className={styles["home"]}>
-      <h1 className={styles["home-title"]}>CoffeeChat</h1>
+      <h1 className={styles["home-title"]}>Matcha</h1>
       <GoogleLogin
         clientId="956626273843-t281em1k26amkus44arum6lk434gr8su.apps.googleusercontent.com"
         onSuccess={handleSuccessfulLogin}
         onFailure={handleFailedLogin}
         cookiePolicy="single_host_origin"
-        isSignedIn={true}
+        isSignedIn={false}
         render={(renderProps) => (
           <button
             className={styles["home-signin"]}
             onClick={renderProps.onClick}
           >
-            sign up with google
+            sign in with google
           </button>
         )}
       />

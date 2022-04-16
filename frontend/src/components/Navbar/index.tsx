@@ -6,19 +6,17 @@ import Link from "@/components/Link";
 import styles from "./styles.module.scss";
 import { useUserContext } from "@/context/UserContext";
 
-interface NavbarProps {
-
-}
+interface NavbarProps {}
 
 const Navbar = (): JSX.Element => {
   const { user } = useUserContext();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!user) {
-      router.replace("/");
-    }
-  }, [router, user]);
+  // useEffect(() => {
+  //   if (!user) {
+  //     router.replace("/");
+  //   }
+  // }, [router, user]);
 
   return (
     <div className={styles.navbar}>
@@ -27,14 +25,20 @@ const Navbar = (): JSX.Element => {
           <h2 className={styles["navbar-title"]}>Matcha</h2>
         </Link>
       </button>
-      <Link className={styles["navbar-user"]} href="/preferences" type="button">
-        <h2 className={styles["navbar-username"]}>{user?.name}</h2>
-        <img
-          className={styles["navbar-avatar"]}
-          src={user?.imageUrl}
-          alt={user?.name}
-        />
-      </Link>
+      {user ? (
+        <Link
+          className={styles["navbar-user"]}
+          href="/preferences"
+          type="button"
+        >
+          <h2 className={styles["navbar-username"]}>{user?.name}</h2>
+          <img
+            className={styles["navbar-avatar"]}
+            src={user?.imageUrl}
+            alt={user?.name}
+          />
+        </Link>
+      ) : null}
     </div>
   );
 };

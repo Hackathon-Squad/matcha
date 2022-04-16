@@ -8,21 +8,22 @@ import styles from "./find.module.scss";
 import { useUserContext } from "@/context/UserContext";
 import { type GoogleUserResponse } from "@/utils/types";
 
-interface FindUsersProps {
-  
-}
+interface FindUsersProps {}
 
 const FindUsers: NextPage<FindUsersProps> = ({}) => {
   const router = useRouter();
   const { user } = useUserContext();
-  useEffect(() => {
-    if (!user) {
-      router.replace("/");
-    }
-  }, [router, user]);
 
   // TODO: Fetch an actual user from nearby population
-  const [currentUser, setCurrentUser] = useState<GoogleUserResponse | null>(user);
+  const [currentUser, setCurrentUser] = useState<GoogleUserResponse | null>(
+    user
+  );
+
+  useEffect(() => {
+    if (!currentUser) {
+      router.replace("/find");
+    }
+  });
 
   return (
     <>

@@ -1,25 +1,17 @@
 import { useEffect } from "react";
-import { type NextPage } from "next"
-import { useRouter } from "next/router"
+import { type NextPage } from "next";
+import { useRouter } from "next/router";
 
 import { useUserContext } from "@/context/UserContext";
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/Navbar";
 
-import styles from "./preferences.module.scss"
+import styles from "./preferences.module.scss";
 
-interface PreferencesProps {
+interface PreferencesProps {}
 
-}
-
-const Preferences: NextPage<PreferencesProps> = ({  }) => {
-
-  const { user } = useUserContext()
-  const router = useRouter()
-  useEffect(() => {
-    if (!user) {
-      router.replace('/')
-    }
-  }, [user])
+const Preferences: NextPage<PreferencesProps> = ({}) => {
+  const { user } = useUserContext();
+  const router = useRouter();
 
   return (
     <>
