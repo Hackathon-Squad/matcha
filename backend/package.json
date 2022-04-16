@@ -1,4 +1,7 @@
 {
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "tsc",
@@ -13,9 +16,6 @@
     "mongodb": "^4.5.0",
     "mongoose": "^6.3.0"
   },
-  "name": "backend",
-  "version": "1.0.0",
-  "main": "server.js",
   "devDependencies": {
     "concurrently": "^7.1.0",
     "nodemon": "^2.0.15",
