@@ -8,7 +8,7 @@ import {
 } from "react";
 
 type $TSFIXME = any;
-type User = GoogleUserResponse; // TEMPORARY
+type User = GoogleUserResponse;
 
 type ResponseHandler = (res: $TSFIXME) => void;
 
