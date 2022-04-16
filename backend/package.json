@@ -1,8 +1,18 @@
 {
+  "scripts": {
+    "start": "node ./server/server.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "mongodb": "^4.5.0",
     "mongoose": "^6.3.0"
-  }
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

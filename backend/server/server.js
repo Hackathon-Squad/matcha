@@ -5,7 +5,7 @@ const cors = require('cors');
 const users = require('./routes/users');
 
 const app = express();
-const url = ``;
+const url = `mongodb+srv://faris:wheel@cluster0.y2bnz.mongodb.net`;
 
 app.use(cors());
 app.use(express.json());
