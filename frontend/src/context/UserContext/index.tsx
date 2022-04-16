@@ -1,21 +1,22 @@
+import { GoogleUserResponse } from "@/utils/types";
 import {
   createContext,
   useContext,
   useEffect,
   useState,
   type ReactNode,
-} from 'react'
+} from "react";
 
-type $TSFIXME = any
-type User = unknown // TEMPORARY
+type $TSFIXME = any;
+type User = GoogleUserResponse; // TEMPORARY
 
-type ResponseHandler = (res: $TSFIXME) => void
+type ResponseHandler = (res: $TSFIXME) => void;
 
 interface UserContextData {
-  user: User | null
-  handleSuccessfulLogin: ResponseHandler
-  handleFailedLogin: ResponseHandler
-  handleLogout: () => void
+  user: User | null;
+  handleSuccessfulLogin: ResponseHandler;
+  handleFailedLogin: ResponseHandler;
+  handleLogout: () => void;
 }
 
 const UserContext = createContext<UserContextData | undefined>(undefined);
@@ -23,17 +24,16 @@ const UserContext = createContext<UserContextData | undefined>(undefined);
 export const useUserContext = () => {
   const context = useContext(UserContext);
   if (context === undefined) {
-    throw new Error('useTheme must be used in a ThemeProvider');
+    throw new Error("useTheme must be used in a ThemeProvider");
   }
   return context;
-}
+};
 
 interface UserProviderProps {
-  children?: ReactNode
+  children?: ReactNode;
 }
 
 export const UserProvider = ({ children }: UserProviderProps) => {
-
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -42,15 +42,15 @@ export const UserProvider = ({ children }: UserProviderProps) => {
 
   const handleSuccessfulLogin: ResponseHandler = (res) => {
     setUser(res.profileObj);
-  }
+  };
 
   const handleLogout = () => {
     setUser(null);
-  }
+  };
 
   const handleFailedLogin: ResponseHandler = (res) => {
     setUser(null);
-  }
+  };
 
   return (
     <UserContext.Provider
@@ -61,7 +61,7 @@ export const UserProvider = ({ children }: UserProviderProps) => {
         handleFailedLogin,
       }}
     >
-      { children }
+      {children}
     </UserContext.Provider>
-  )
+  );
 };
