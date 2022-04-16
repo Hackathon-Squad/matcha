@@ -2,10 +2,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 import Home from "./pages/Home";
 import FindUsers from "./pages/FindUsers";
+import { useEffect } from "react";
 
 const App = () => {
   const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    console.log(user)
+  }, [user])
   const handleSuccessfulLogin = (res) => setUser(res.profileObj);
 
   const handleLogout = () => setUser(null);
