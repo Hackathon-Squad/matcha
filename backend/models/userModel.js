@@ -5,11 +5,23 @@ const userTemplate = new mongoose.Schema({
         type: String,
         required: true
     },
-    password: {
+    first_name: {
         type: String,
         required: true
     },
-    interests: {
+    last_name: {
+        type: String,
+        required: true
+    },
+    img_url: {
+        type: String,
+        required: true
+    },
+    coffee_pref: {
+        type: Array,
+        required: true
+    },
+    shop_pref: {
         type: Array,
         required: true
     }

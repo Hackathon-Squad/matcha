@@ -15,6 +15,9 @@ router.post('/createUser', async (req, res) => {
     res.status(200).json(newUser);
 });
 
+
+
+/*
 router.put('/updateUser', async (req, res) => {
     const {password, email} = req.body
     if (!password || !email) {
@@ -24,6 +27,7 @@ router.put('/updateUser', async (req, res) => {
         res.status(200).json(updatedUser);
     }
 });
+*/
 
 
 
