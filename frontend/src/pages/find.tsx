@@ -6,10 +6,10 @@ import { ImCross } from "react-icons/im";
 import Navbar from "@/components/Navbar";
 import styles from "./find.module.scss";
 import { useUserContext } from "@/context/UserContext";
-import { GoogleUserResponse } from "@/utils/types";
+import { type GoogleUserResponse } from "@/utils/types";
 
 interface FindUsersProps {
-  user: GoogleUserResponse;
+  
 }
 
 const FindUsers: NextPage<FindUsersProps> = ({}) => {
@@ -22,11 +22,11 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
   }, [router, user]);
 
   // TODO: Fetch an actual user from nearby population
-  const [currentUser, setCurrentUser] = useState(user);
+  const [currentUser, setCurrentUser] = useState<GoogleUserResponse | null>(user);
 
   return (
     <>
-      <Navbar user={user} />
+      <Navbar />
       <div className={styles["find-users"]}>
         <img
           className={styles["find-user-img"]}

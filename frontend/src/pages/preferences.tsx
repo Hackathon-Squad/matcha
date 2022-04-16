@@ -23,7 +23,7 @@ const Preferences: NextPage<PreferencesProps> = ({  }) => {
 
   return (
     <>
-      <Navbar user={user} />
+      <Navbar />
       <div className={styles["find-users"]}></div>
     </>
   );

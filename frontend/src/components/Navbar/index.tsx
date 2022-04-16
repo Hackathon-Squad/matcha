@@ -4,13 +4,14 @@ import { useRouter } from "next/router";
 import Link from "@/components/Link";
 
 import styles from "./styles.module.scss";
-import { GoogleUserResponse } from "@/utils/types";
+import { useUserContext } from "@/context/UserContext";
 
 interface NavbarProps {
-  user?: GoogleUserResponse;
+
 }
 
-const Navbar = ({ user }: NavbarProps): JSX.Element => {
+const Navbar = (): JSX.Element => {
+  const { user } = useUserContext();
   const router = useRouter();
 
   useEffect(() => {
