@@ -20,7 +20,6 @@ router.post('/getUsers', async (req, res) => {
     res.status(200).json(users);
 });
 
-/*
 router.post('/updateCoffees/:id', async (req, res) => {
     let myUser = { _id: ObjectId( req.params.id )};
     myUser.coffee_pref = req.body.coffee_pref;
@@ -34,6 +33,6 @@ router.post('/updateShops/:id', async (req, res) => {
     const users = await myUser.save();
     res.status(200).json(users);
 });
-*/
+
 
 module.exports = router;
