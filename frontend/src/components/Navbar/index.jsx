@@ -15,7 +15,7 @@ const Navbar = ({ user }) => {
           }}
           className="navbar-title"
         >
-          CoffeeChat
+          Matcha
         </h2>
       </button>
       <button
