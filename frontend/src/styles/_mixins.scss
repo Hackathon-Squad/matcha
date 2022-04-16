@@ -1,0 +1,29 @@
+@use './colors';
+
+/* scrollbar */
+
+// TODO: update default track/thumb color 
+@mixin scrollbar(
+  $scrollbar-size: 8px,
+  $track-color: colors.$cream,
+  $thumb-color: colors.$coffee,
+  $track-border-radius: $scrollbar-size,
+  $thumb-padding: 0px,
+  $thumb-border-radius: $scrollbar-size,
+  ) {
+  &::-webkit-scrollbar {
+    height: $scrollbar-size;
+    width: $scrollbar-size;
+
+    &-track {
+      background-color: $track-color;
+      border-radius: $track-border-radius;
+    }
+    
+    &-thumb {
+      background-color: $thumb-color;
+      border-radius: $thumb-border-radius;
+      border: $thumb-padding solid $track-color; 
+    }
+  }
+}

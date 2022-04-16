@@ -1,0 +1,23 @@
+@use "sass:string";
+
+// unmangling https://sass-lang.com/documentation/modules#global-functions
+
+@function _css-func($function, $args...) {
+  @return $function + string.unquote('(') + $args + string.unquote(')');
+}
+
+@function hsl($args...) {
+  @return _css-func(hsl, $args);
+}
+
+@function rgb($args...) {
+  @return _css-func(rgb, $args);
+}
+
+@function min($args...) {
+  @return _css-func(min, $args);
+}
+
+@function max($args...) {
+  @return _css-func(max, $args);
+}
