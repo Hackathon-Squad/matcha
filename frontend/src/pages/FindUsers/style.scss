@@ -1,0 +1,65 @@
+@use 'src/styles/colors.scss' as colors;
+
+.find-users {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: calc(100vh - 7rem);
+  text-align: center;
+  .find-user-img {
+    width: 25%;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .find-user-text-content {
+    .find-user-name {
+      color: colors.$coffee;
+      margin: 0;
+    }
+  
+    .find-user-likes {
+      font-weight: 200;
+      color: colors.$text;
+      margin: 0;
+    }
+  
+    .find-user-shops {
+      font-weight: 200;
+      color: colors.$text;
+      margin: 0;
+    }
+  }
+
+  .find-button-container {
+    display: flex;
+    flex-flow: row;
+    button {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 2rem;
+      margin: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      transition: 0.25s ease-in-out;
+      &:hover {
+        filter: saturate(2);
+      }
+    }
+
+
+    .find-button-no {
+      background-color: colors.$coffee;
+    }
+
+    .find-button-yes {
+      background-color: colors.$matcha-latte;
+    }
+  }
+}

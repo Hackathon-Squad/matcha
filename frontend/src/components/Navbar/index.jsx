@@ -11,10 +11,11 @@ const Navbar = ({ user}) => {
   return (
     <div className="navbar">
       <h2 className="navbar-title">CoffeeChat</h2>
-      <button className="navbar-avatar" onClick={() => {
-        navigate('/preferences')
+      <button className="navbar-user" onClick={() => {
+          navigate('/preferences')
       }}>
-        <img src={user.imageUrl} alt={user.name} />
+        <h2 className="navbar-username">{user.name}</h2>
+        <img className="navbar-avatar" src={user.imageUrl} alt={user.name} />
       </button>
     </div>
   )
