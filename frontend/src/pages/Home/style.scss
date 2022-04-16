@@ -1,4 +1,4 @@
-@use 'src/styles/colors.scss' as colors;
+@use "src/styles/colors.scss" as colors;
 
 .home {
   display: flex;
@@ -21,7 +21,7 @@
     padding: 10px;
     background-color: colors.$coffee;
     color: colors.$cream;
-    border: 1px solid #AD8B73;
+    border: 1px solid #ad8b73;
     border-radius: 12px;
     font-style: normal;
     font-weight: 700;
