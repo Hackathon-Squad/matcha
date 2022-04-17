@@ -3,7 +3,7 @@ import { type NextPage } from "next";
 import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar";
 import { useUserContext } from "@/context/UserContext";
-import { type GoogleUserResponse } from "@/utils/types";
+import { APIUserResponse, type GoogleUserResponse } from "@/utils/types";
 import { userData } from "@/utils/sampleData";
 import SwipeOnUser from "@/components/SwipeOnUser";
 import styles from "./find.module.scss";
@@ -18,13 +18,49 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
   const [nearbyUsers, setNearbyUsers] =
     useState<GoogleUserResponse[]>(userData);
 
+  useEffect(() => {
+
+    // const saveUsers = async () => {
+    //   const response: APIUserResponse = await fetch("http://localhost:5000/users/all", {
+    //     method: "GET",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   }).catch((err) => {
+    //     console.error(err);
+    //   });
+
+    //   setNearbyUsers(response);
+    // }
+
+    // saveUsers()
+    
+  }, [])
+
   const [currentUser, setCurrentUser] = useState<GoogleUserResponse>(
     nearbyUsers[0]
   );
 
-  const handleAccept = useCallback(() => {
+  const handleAccept = useCallback(async () => {
     console.log(`${user?.name} matches with ${currentUser.name}!`);
-    // TODO: Make a post requrest to store currentUser in users matches
+
+    // const formData = {
+    //   user1: user?.googleId,
+    //   user2: currentUser.googleId,
+    // }
+
+    // const response = await fetch("http://localhost:5000/match/", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(formData),
+    //   }).catch((err) => {
+    //     console.error(err);
+    //   });
+  
+
+
   }, [currentUser, user]);
 
   const handleReject = useCallback(() => {
