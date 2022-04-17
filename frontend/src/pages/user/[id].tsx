@@ -19,7 +19,7 @@ const UserProfile: NextPage<APIUserResponse> = ({}) => {
 
   useEffect(() => {
     const setUser = async () => {
-      const res = await fetch(`http://localhost:5000/user/:${id}`);
+      const res = await fetch(`http://localhost:8080/user/:${id}`);
       console.log(res);
       // setUser(res);
     };

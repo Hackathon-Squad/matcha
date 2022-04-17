@@ -133,7 +133,7 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
             };
             console.log(formData);
             //POST
-            const response = await fetch("http://localhost:5000/user/add", {
+            const response = await fetch("http://localhost:8080/user/add", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

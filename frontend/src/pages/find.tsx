@@ -20,7 +20,7 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
 
   useEffect(() => {
     const saveUsers = async () => {
-      const response: Response = await fetch("http://localhost:5000/user/all");
+      const response: Response = await fetch("http://localhost:8080/user/all");
       const data: APIUserResponse[] = await response.json();
       console.log(data);
 
@@ -55,7 +55,7 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
     //   user2: currentUser.googleId,
     // }
 
-    // const response = await fetch("http://localhost:5000/match/", {
+    // const response = await fetch("http://localhost:8080/match/", {
     //     method: "POST",
     //     headers: {
     //       "Content-Type": "application/json",
