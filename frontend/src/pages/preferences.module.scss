@@ -32,18 +32,40 @@
   }
 
   .add-more {
-    background-color: colors.$coffee;
-    color: colors.$cream;
+    color: colors.$coffee;
+    font-weight: 700;
     padding: 5px;
     margin: 10px 20px;
     border-radius: 5px;
+    border: 2px solid colors.$coffee;
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+
     cursor: pointer;
     transition: 0.3s ease-in-out;
     &:hover {
       transform: scale(1.04);
+      background: colors.$coffee;
+      color: colors.$cream;
     }
   }
 
-  .location-input {
+  .save-preferences {
+    height: 3rem;
+    padding: 10px;
+    background-color: colors.$coffee;
+    color: colors.$cream;
+    border: 1px solid #ad8b73;
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+
+    &:hover {
+      transform: scale(1.04);
+    }
   }
 }

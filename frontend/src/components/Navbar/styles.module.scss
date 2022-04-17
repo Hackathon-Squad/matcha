@@ -15,8 +15,20 @@
     border: none;
     background: none;
     cursor: pointer;
-    .navbar-title {
-      color: colors.$cream;
+
+    .logo-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      .logo {
+        width: 3rem;
+      }
+
+      .navbar-title {
+        color: colors.$cream;
+        padding: 0.25rem;
+      }
     }
   }
   .navbar-user {

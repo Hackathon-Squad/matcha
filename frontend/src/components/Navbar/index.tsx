@@ -6,6 +6,8 @@ import Link from "@/components/Link";
 import styles from "./styles.module.scss";
 import { useUserContext } from "@/context/UserContext";
 
+import logo from "assets/logo-final.svg";
+
 interface NavbarProps {}
 
 const Navbar = (): JSX.Element => {
@@ -21,7 +23,8 @@ const Navbar = (): JSX.Element => {
   return (
     <div className={styles.navbar}>
       <button className={styles["navbar-title-button"]}>
-        <Link href={"/find"}>
+        <Link className={styles["logo-title"]} href={"/find"}>
+          <img className={styles["logo"]} src={logo.src} alt="" />
           <h2 className={styles["navbar-title"]}>Matcha</h2>
         </Link>
       </button>

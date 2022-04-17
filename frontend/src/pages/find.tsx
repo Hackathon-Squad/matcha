@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { type NextPage } from "next";
 import { useRouter } from "next/router";
-import { FiCoffee } from "react-icons/fi";
-import { ImCross } from "react-icons/im";
 import Navbar from "@/components/Navbar";
-import styles from "./find.module.scss";
 import { useUserContext } from "@/context/UserContext";
 import { type GoogleUserResponse } from "@/utils/types";
+import { userData } from "@/utils/sampleData";
+import SwipeOnUser from "@/components/SwipeOnUser";
 
 interface FindUsersProps {}
 
@@ -14,45 +13,29 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
   const router = useRouter();
   const { user } = useUserContext();
 
-  // TODO: Fetch an actual user from nearby population
-  const [currentUser, setCurrentUser] = useState<GoogleUserResponse | null>(
-    user
-  );
+  const [nearbyUsers, setNearbyUsers] =
+    useState<GoogleUserResponse[]>(userData);
 
-  useEffect(() => {
-    if (!currentUser) {
-      router.replace("/find");
-    }
-  });
+  const [currentUser, setCurrentUser] = useState<GoogleUserResponse>(nearbyUsers[0]);
+  
+  const handleAccept = useCallback(() => {
+    console.log(`${user?.name} matches with ${currentUser.name}!`)
+    // TODO: Make a post requrest to store currentUser in users matches
+  }, [currentUser, user])
 
+  const handleReject = useCallback(() => {
+    console.log(`${user?.name} rejects ${currentUser.name}!`)
+    // Move on
+  }, [currentUser, user])
+  
   return (
     <>
       <Navbar />
-      <div className={styles["find-users"]}>
-        <img
-          className={styles["find-user-img"]}
-          // TODO: Temporary image URL
-          src="https://freepngimg.com/thumb/google/88364-brown-pusheen-rectangle-cat-free-png-hq.png"
-          alt=""
-        />
-        <div className={styles["find-user-text-content"]}>
-          <h1 className={styles["find-user-name"]}>{currentUser?.name} </h1>
-          <h2 className={styles["find-user-likes"]}>
-            likes <b>coffee</b>
-          </h2>
-          <h2 className={styles["find-user-shops"]}>
-            frequents <b>starbucks, peets</b>
-          </h2>
-        </div>
-        <div className={styles["find-button-container"]}>
-          <button className={styles["find-button-no"]}>
-            <ImCross color="hsl(49, 100, 96)" size={20} />
-          </button>
-          <button className={styles["find-button-yes"]}>
-            <FiCoffee color="hsl(49, 100, 96)" size={20} />
-          </button>
-        </div>
-      </div>
+      <SwipeOnUser
+        user={currentUser}
+        onReject={handleReject}
+        onAccept={handleAccept}
+      />
     </>
   );
 };
