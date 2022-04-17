@@ -21,7 +21,7 @@ router.post('/getUsers/:id', async (req, res) => {
     res.status(200).json(users);
 });
 
-router.post('/getSwipedUsers/:id', async (req, res) => {
+router.post('/getSwipedRight/:id', async (req, res) => {
     let myUser = { _id: ObjectId( req.params.id )};
     const users = await myUser.find({ _id: { $in: myUser.swiped_right }});
     res.status(200).json(users);
