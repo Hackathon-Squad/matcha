@@ -36,7 +36,7 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
           alt=""
         />
         <div className={styles["find-user-text-content"]}>
-          <h1 className={styles["find-user-name"]}>{currentUser.name} </h1>
+          <h1 className={styles["find-user-name"]}>{currentUser?.name} </h1>
           <h2 className={styles["find-user-likes"]}>
             likes <b>coffee</b>
           </h2>
