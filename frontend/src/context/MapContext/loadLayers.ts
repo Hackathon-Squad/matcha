@@ -20,29 +20,29 @@ type ModelOptions = {
 }
 const models: Record<Model, ModelOptions> = {
   coffee: {
-    obj: '/models/drivethru.glb',
-    // obj: '/models/coffee/scene.glb',
+    // obj: '/models/drivethru.glb',
+    obj: '/models/coffee/scene.glb',
     type: 'gltf',
-    scale: 50,
+    scale: 0.5,
     units: 'meters',
     anchor: 'center',
-    rotation: { x: 180, y: 0, z: 180 },
+    rotation: { x: 90, y: 180, z: 0 },
   },
   boba: {
     obj: '/models/boba/scene.glb',
     type: 'gltf',
-    scale: 40,
+    scale: 2,
     units: 'meters',
     anchor: 'center',
-    rotation: { x: 0, y: 0, z: 0 },
+    rotation: { x: 90, y: 90, z: 0 },
   },
   ice_cream: {
     obj: '/models/ice_cream/scene.glb',
     type: 'gltf',
-    scale: 40,
+    scale: 20,
     units: 'meters',
     anchor: 'center',
-    rotation: { x: 0, y: 0, z: 0 },
+    rotation: { x: 90, y: 180, z: 0 },
   },
 }
 
@@ -77,7 +77,6 @@ export const loadLayers = (map: Map, locations: Location[]) => {
           ;(window as any).tb.loadObj(opts, function (obj: any) {
             model = obj.setCoords([location.longitude, location.latitude]);
             ;(window as any).tb.add(model)
-            console.log(model.scale)
           })
         })
       }

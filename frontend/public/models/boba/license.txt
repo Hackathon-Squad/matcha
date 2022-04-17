@@ -1,11 +1,11 @@
 Model Information:
-* title:	Boba Tea Cup
-* source:	https://sketchfab.com/3d-models/boba-tea-cup-3693fa4414f64a41b04be4aa70e35448
-* author:	xonibunnyx (https://sketchfab.com/xonibunnyx)
+* title:	Bubble Tea Cartoon
+* source:	https://sketchfab.com/3d-models/bubble-tea-cartoon-16ee83e509e745998f229da44a8387e8
+* author:	AoBlue_Moon (https://sketchfab.com/Blue_Moon)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Boba Tea Cup" (https://sketchfab.com/3d-models/boba-tea-cup-3693fa4414f64a41b04be4aa70e35448) by xonibunnyx (https://sketchfab.com/xonibunnyx) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Bubble Tea Cartoon" (https://sketchfab.com/3d-models/bubble-tea-cartoon-16ee83e509e745998f229da44a8387e8) by AoBlue_Moon (https://sketchfab.com/Blue_Moon) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

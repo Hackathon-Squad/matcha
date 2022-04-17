@@ -23,7 +23,7 @@ const MapComponent = () => {
         width: '100%',
         transition: '.5s'
       }}
-			onStyleLoad={(map) => { setTimeout(() => setMap(map), 2000); }}
+			onStyleLoad={(map) => { setMap(map); }}
 		/>
 	);
 }
