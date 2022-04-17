@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         onSuccess={handleSuccessfulLogin}
         onFailure={handleFailedLogin}
         cookiePolicy="single_host_origin"
-        isSignedIn={false}
+        isSignedIn={true}
         render={(renderProps) => (
           <button
             className={styles["home-signin"]}
