@@ -1,0 +1,49 @@
+@use "@/styles/colors";
+
+.preferences {
+  padding: 2rem 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: colors.$text;
+
+  .order-div {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .order-input {
+      width: 75%;
+      border: 1px solid colors.$text;
+      background-color: colors.$cream;
+      border-radius: 6px;
+      margin: 0.5rem 1rem;
+      &:focus {
+        outline: 1px solid colors.$text;
+      }
+    }
+
+    .close {
+      cursor: pointer;
+    }
+  }
+
+  .add-more {
+    background-color: colors.$coffee;
+    color: colors.$cream;
+    padding: 5px;
+    margin: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  .location-input {
+  }
+}
