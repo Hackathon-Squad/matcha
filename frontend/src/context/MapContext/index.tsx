@@ -40,7 +40,7 @@ export const MapProvider = ({ children }: MapProviderProps) => {
   useEffect(() => {
     console.log('map effect triggered', { map, locations })
     if (map) {
-      debounce(loadLayers, 2000)(map, locations);
+      debounce(loadLayers, 2000)(map, locations, 2);
     }
   }, [map, locations])
 
