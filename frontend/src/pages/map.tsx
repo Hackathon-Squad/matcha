@@ -12,18 +12,18 @@ const MapPage: NextPage = () => {
     setLocations([
       {
         type: "coffee",
-        longitude: -117.23754811641379,
-        latitude: 32.881287611627904,
+        longitude: -117.2936107,
+        latitude: 32.854644,
       },
       {
         type: "boba",
-        longitude: -117.2365382,
-        latitude: 32.8810575,
+        longitude: -117.2242428,
+        latitude: 32.8674499,
       },
       {
         type: "ice_cream",
-        longitude: -117.23856864,
-        latitude: 32.88141086,
+        longitude: -117.2242428,
+        latitude: 32.8674475,
       },
     ]);
     // temp, for testing

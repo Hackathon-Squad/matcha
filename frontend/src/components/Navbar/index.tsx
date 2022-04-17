@@ -6,7 +6,7 @@ import Link from "@/components/Link";
 import styles from "./styles.module.scss";
 import { useUserContext } from "@/context/UserContext";
 
-import logo from "assets/logo-final.svg";
+import logo from "public/assets/logo-final.svg";
 
 interface NavbarProps {}
 
@@ -37,7 +37,7 @@ const Navbar = (): JSX.Element => {
           <h2 className={styles["navbar-username"]}>{user?.name}</h2>
           <img
             className={styles["navbar-avatar"]}
-            src={user?.imageUrl}
+            src={user?.img_url}
             alt={user?.name}
           />
         </Link>

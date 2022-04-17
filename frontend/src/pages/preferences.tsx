@@ -8,6 +8,9 @@ import Navbar from "@/components/Navbar";
 import styles from "./preferences.module.scss";
 import { useState } from "react";
 import MapComponent from "@/components/Map";
+import GooglePlacesAutocomplete from "react-google-places-autocomplete";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface PreferencesProps {}
 
@@ -20,9 +23,14 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
   const [instagram, setInstagram] = useState<string>("");
   const [messenger, setMessenger] = useState<string>("");
   const [discord, setDiscord] = useState<string>("");
+
+  let autocomplete: google.maps.places.Autocomplete;
+
   return (
     <>
       <Navbar />
+      <ToastContainer />
+
       <div className={styles["preferences"]}>
         <h3>what do you like to order?</h3>
         <button
@@ -110,10 +118,13 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
             className={styles["social-media-link"]}
           />
         </div>
+        {/* <GooglePlacesAutocomplete apiKey="AIzaSyA1i6W-pOdL8laGk3ygL9XJyJ8_aIGj4Ks" /> */}
         {/* on click send post request to backend */}
         <button
-          onClick={() => {
+          onClick={async () => {
             const formData = {
+              ...user,
+              _id: user?.googleId,
               drinks: inputValues,
               location,
               instagram,
@@ -121,6 +132,18 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
               discord,
             };
             console.log(formData);
+            //POST
+            const response = await fetch("http://localhost:5000/user/add", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            }).catch((err) => {
+              console.error(err);
+            });
+
+            toast("saved");
           }}
           className={styles["save-preferences"]}
         >

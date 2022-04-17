@@ -1,4 +1,4 @@
-import { GoogleUserResponse } from "@/utils/types";
+import { APIUserResponse, GoogleUserResponse } from "@/utils/types";
 import {
   createContext,
   useContext,
@@ -8,7 +8,7 @@ import {
 } from "react";
 
 type $TSFIXME = any;
-type User = GoogleUserResponse;
+type User = APIUserResponse;
 
 type ResponseHandler = (res: $TSFIXME) => void;
 
@@ -34,7 +34,7 @@ interface UserProviderProps {
 }
 
 export const UserProvider = ({ children }: UserProviderProps) => {
-  const [user, setUser] = useState<GoogleUserResponse | null>(null);
+  const [user, setUser] = useState<APIUserResponse | null>(null);
 
   useEffect(() => {
     console.log(user);
@@ -42,8 +42,21 @@ export const UserProvider = ({ children }: UserProviderProps) => {
 
   const handleSuccessfulLogin: ResponseHandler = async (res) => {
     const userData: GoogleUserResponse = res.profileObj;
-
-    setUser(userData);
+    const apiData: APIUserResponse = {
+      email: userData.email,
+      last_name: userData.familyName,
+      first_name: userData.givenName,
+      googleId: userData.googleId,
+      img_url: userData.imageUrl,
+      name: userData.name,
+      drinks: [],
+      location: "",
+      matches: [],
+      discord: "",
+      messenger: "",
+      instagram: "",
+    };
+    setUser(apiData);
 
     const formData = {
       id: userData.googleId,
