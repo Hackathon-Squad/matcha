@@ -46,7 +46,7 @@ const models: Record<Model, ModelOptions> = {
   },
 }
 
-export const loadLayers = (map: Map, locations: Location[]) => {
+export const loadLayers = (map: Map, locations: Location[], resize: number = 1) => {
   console.log('LOADING LAYERS')
   console.log({ locations })
 
@@ -72,6 +72,7 @@ export const loadLayers = (map: Map, locations: Location[]) => {
         ;(window as any).tb = new Threebox(_map, ctx, { defaultLights: true })
 
         const opts = models[type as Model]
+        opts.scale *= resize
 
         variants[type].forEach((location) => {
           ;(window as any).tb.loadObj(opts, function (obj: any) {
