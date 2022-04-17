@@ -16,24 +16,24 @@ router.post('/createUser', async (req, res) => {
     res.status(200).json(newUser);
 });
 
-router.post('/getUsers/:id', async (req, res) => {
+router.get('/getUsers/:id', async (req, res) => {
     const users = await User.find({ _id: { $nin: req.params.id }});
     res.status(200).json(users);
 });
 
-router.post('/getSwipedUsers/:id', async (req, res) => {
+router.get('/getSwipedUsers/:id', async (req, res) => {
     let myUser = { _id: ObjectId( req.params.id )};
     const users = await myUser.find({ _id: { $in: myUser.swiped_right }});
     res.status(200).json(users);
 });
 
-router.post('/getNotSwiped/:id', async (req, res) => {
+router.get('/getNotSwiped/:id', async (req, res) => {
     let myUser = { _id: ObjectId( req.params.id )};
     const users = await  myUser.find({ _id: { $nin: myUser.swiped }});
     res.status(200).json(users);
 })
 
-router.post('/updateCoffees/:id', async (req, res) => {
+router.put('/updateCoffees/:id', async (req, res) => {
     let myUser = { _id: ObjectId( req.params.id )};
     myUser.coffee_pref = req.body.coffee_pref;
     const users = await myUser.save();
