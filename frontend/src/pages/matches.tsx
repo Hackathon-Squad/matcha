@@ -9,7 +9,7 @@ import Navbar from "@/components/Navbar";
 import styles from "./matches.module.scss";
 import UserCard from "@/components/UserCard";
 import { useState } from "react";
-import { GoogleUserResponse } from "@/utils/types";
+import { APIUserResponse } from "@/utils/types";
 import { userData } from "@/utils/sampleData";
 
 const Match: NextPage = () => {
@@ -17,9 +17,9 @@ const Match: NextPage = () => {
 
   const { user } = useUserContext();
 
-  const [matches, setMatches] = useState<GoogleUserResponse[]>(userData);
+  const [matches, setMatches] = useState<APIUserResponse[]>(userData);
 
-  const [visible, setVisible] = useState<GoogleUserResponse[]>(matches);
+  const [visible, setVisible] = useState<APIUserResponse[]>(matches);
 
   const [searchInput, setSearchInput] = useState<string>("");
 
@@ -45,15 +45,7 @@ const Match: NextPage = () => {
             type="text"
             className={styles["order-input"]}
           />
-          <button
-            className={styles["close"]}
-            onClick={() => {
-              // TODO:
-              console.log("hi");
-            }}
-          >
-            <AiOutlineSearch color="603d3d" />
-          </button>
+          <AiOutlineSearch color="603d3d" />
         </div>
         {visible.map((match, index) => (
           <UserCard
@@ -61,6 +53,7 @@ const Match: NextPage = () => {
             name={match.name}
             srcUrl={match.imageUrl}
             altText={match.name}
+            id={match.googleId}
           />
         ))}
       </div>

@@ -3,7 +3,7 @@ import { type NextPage } from "next";
 import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar";
 import { useUserContext } from "@/context/UserContext";
-import { APIUserResponse, type GoogleUserResponse } from "@/utils/types";
+import { APIUserResponse } from "@/utils/types";
 import { userData } from "@/utils/sampleData";
 import SwipeOnUser from "@/components/SwipeOnUser";
 import styles from "./find.module.scss";
@@ -15,11 +15,9 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
   const router = useRouter();
   const { user } = useUserContext();
 
-  const [nearbyUsers, setNearbyUsers] =
-    useState<GoogleUserResponse[]>(userData);
+  const [nearbyUsers, setNearbyUsers] = useState<APIUserResponse[]>(userData);
 
   useEffect(() => {
-
     // const saveUsers = async () => {
     //   const response: APIUserResponse = await fetch("http://localhost:5000/users/all", {
     //     method: "GET",
@@ -29,15 +27,12 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
     //   }).catch((err) => {
     //     console.error(err);
     //   });
-
     //   setNearbyUsers(response);
     // }
-
     // saveUsers()
-    
-  }, [])
+  }, []);
 
-  const [currentUser, setCurrentUser] = useState<GoogleUserResponse>(
+  const [currentUser, setCurrentUser] = useState<APIUserResponse>(
     nearbyUsers[0]
   );
 
@@ -58,9 +53,6 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
     //   }).catch((err) => {
     //     console.error(err);
     //   });
-  
-
-
   }, [currentUser, user]);
 
   const handleReject = useCallback(() => {

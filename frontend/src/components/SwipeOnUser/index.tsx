@@ -1,10 +1,10 @@
 import styles from "./styles.module.scss";
 import { FiCoffee } from "react-icons/fi";
 import { ImCross } from "react-icons/im";
-import { GoogleUserResponse } from "@/utils/types";
+import { APIUserResponse } from "@/utils/types";
 
 const SwipeOnUser: React.FC<{
-  user: GoogleUserResponse;
+  user: APIUserResponse;
   onReject: () => void;
   onAccept: () => void;
 }> = ({ user, onReject, onAccept }) => {

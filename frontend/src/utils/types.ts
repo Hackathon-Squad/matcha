@@ -15,6 +15,8 @@ export interface APIUserResponse {
   name: string;
   drinks: string[];
   favoriteStore: string;
-  matches: APIUserResponse[];
-  socialLinks: string[];
+  matches: string[];
+  discord: string;
+  messenger: string;
+  instagram: string;
 }
