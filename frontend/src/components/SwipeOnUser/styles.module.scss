@@ -3,11 +3,10 @@
 .find-users {
   display: flex;
   flex-flow: column nowrap;
-  gap: 2rem;
-  justify-content: center;
+  gap: 1rem;
+  justify-content: flex-start;
   align-items: center;
   width: 100vw;
-  height: calc(100vh - 7rem);
   text-align: center;
   .find-user-img {
     max-width: 20rem;

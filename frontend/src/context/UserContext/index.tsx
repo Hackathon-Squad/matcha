@@ -4,7 +4,6 @@ import {
   useContext,
   useEffect,
   useState,
-  useNavigate,
   type ReactNode,
 } from "react";
 
@@ -35,15 +34,14 @@ interface UserProviderProps {
 }
 
 export const UserProvider = ({ children }: UserProviderProps) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<GoogleUserResponse | null>(null);
 
   useEffect(() => {
     console.log(user);
   }, [user]);
 
   const handleSuccessfulLogin: ResponseHandler = async (res) => {
-
-    const userData: GoogleUserResponse = res.profileObj
+    const userData: GoogleUserResponse = res.profileObj;
 
     setUser(userData);
 
@@ -53,11 +51,9 @@ export const UserProvider = ({ children }: UserProviderProps) => {
       first_name: userData.givenName,
       last_name: userData.familyName,
       img_url: userData.imageUrl,
-    }
+    };
 
     //POST
-
-console.log(1);
 
     const response = await fetch("http://localhost:5000/user/add", {
       method: "POST",
@@ -65,11 +61,9 @@ console.log(1);
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
-    })
-
-    console.log(2);
-
-    console.log(response);
+    }).catch((err) => {
+      console.error(err);
+    });
   };
 
   const handleLogout = () => {

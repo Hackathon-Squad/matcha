@@ -108,6 +108,7 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
         </div>
 
         <MapComponent />
+        {/* on click send post request to backend */}
         <button className={styles["save-preferences"]}>save preferences</button>
       </div>
     </>

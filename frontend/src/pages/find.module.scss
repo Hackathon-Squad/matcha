@@ -1,0 +1,27 @@
+@use "src/styles/colors.scss" as colors;
+
+.view-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .view {
+    height: 3rem;
+    padding: 10px;
+    margin: 1rem;
+    background-color: colors.$coffee;
+    color: colors.$cream;
+    border: 1px solid colors.$coffee;
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+}
