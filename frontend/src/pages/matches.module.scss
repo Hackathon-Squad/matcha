@@ -4,14 +4,16 @@
   width: 100%;
 
   .order-div {
+    padding: 2rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0.5rem 0rem;
-    padding: 0;
 
     .order-input {
+      padding-left: 1rem;
+      line-height: 2rem;
       width: 90%;
       border: 1px solid colors.$text;
       background-color: colors.$cream;
