@@ -4,6 +4,7 @@ import {
   useContext,
   useEffect,
   useState,
+  useNavigate,
   type ReactNode,
 } from "react";
 
@@ -40,8 +41,35 @@ export const UserProvider = ({ children }: UserProviderProps) => {
     console.log(user);
   }, [user]);
 
-  const handleSuccessfulLogin: ResponseHandler = (res) => {
-    setUser(res.profileObj);
+  const handleSuccessfulLogin: ResponseHandler = async (res) => {
+
+    const userData: GoogleUserResponse = res.profileObj
+
+    setUser(userData);
+
+    const formData = {
+      id: userData.googleId,
+      email: userData.email,
+      first_name: userData.givenName,
+      last_name: userData.familyName,
+      img_url: userData.imageUrl,
+    }
+
+    //POST
+
+console.log(1);
+
+    const response = await fetch("http://localhost:5000/user/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+
+    console.log(2);
+
+    console.log(response);
   };
 
   const handleLogout = () => {
