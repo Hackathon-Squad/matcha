@@ -22,4 +22,8 @@ recordRoutes.route("/user/add").post(function (req, response) {
     });
 });
 
+// get user
+// update user
+// get all users
+
 module.exports = recordRoutes;
