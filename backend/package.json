@@ -2,13 +2,13 @@
   "name": "backend",
   "private": true,
   "version": "0.1.0",
-  "main": "build/server.js",
+  "main": "build/server/server.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "tsc",
     "clean": "rm -r build",
     "watch": "tsc -w",
-    "start": "concurrently --kill-others \"pnpm watch\" \"nodemon build/index.js\"",
+    "start": "concurrently --kill-others \"pnpm watch\" \"nodemon build/server/server.js\"",
     "serve": "node build/index.js"
   },
   "dependencies": {

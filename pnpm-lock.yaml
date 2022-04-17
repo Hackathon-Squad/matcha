@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 importers:
 
@@ -46,15 +46,15 @@ importers:
       typescript: ^4.6.3
     dependencies:
       mapbox-gl: 2.8.1
-      next: 12.1.5_ed2235bhhr2e4u2nn6cs4cgndy
+      next: 12.1.5_20f5adf4273c744e534d6f852e08cd1e
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
-      react-google-login: 5.2.2_zpnidt7m3osuk7shl3s4oenomq
+      react-google-login: 5.2.2_react-dom@18.0.0+react@18.0.0
       react-icons: 4.3.1_react@18.0.0
-      react-map-gl: 7.0.10_ofvniecolwyiudbw4mzpzc722q
+      react-map-gl: 7.0.10_mapbox-gl@2.8.1+react@18.0.0
     devDependencies:
       eslint: 8.13.0
-      eslint-config-next: 12.1.5_op452gn6ym5wskiozfozn7h6li
+      eslint-config-next: 12.1.5_73f9dd19bec33b69290ec95d96fcfe5a
       sass: 1.50.0
       typescript: 4.6.3
 
@@ -403,7 +403,7 @@ packages:
       '@types/webidl-conversions': 6.1.1
     dev: false
 
-  /@typescript-eslint/parser/5.10.1_jzhokl4shvj5szf5bgr66kln2a:
+  /@typescript-eslint/parser/5.10.1_eslint@8.13.0+typescript@4.6.3:
     resolution: {integrity: sha512-GReo3tjNBwR5RnRO0K2wDIDN31cM3MmDtgyQ85oAxAmC5K3j/g85IjP+cDfcqDsDDBf1HNKQAD0WqOYL8jXqUA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1037,7 +1037,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-next/12.1.5_op452gn6ym5wskiozfozn7h6li:
+  /eslint-config-next/12.1.5_73f9dd19bec33b69290ec95d96fcfe5a:
     resolution: {integrity: sha512-P+DCt5ti63KhC0qNLzrAmPcwRGq8pYqgcf/NNr1E+WjCrMkWdCAXkIANTquo+kcO1adR2k1lTo5GCrNUtKy4hQ==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
@@ -1049,15 +1049,15 @@ packages:
     dependencies:
       '@next/eslint-plugin-next': 12.1.5
       '@rushstack/eslint-patch': 1.0.8
-      '@typescript-eslint/parser': 5.10.1_jzhokl4shvj5szf5bgr66kln2a
+      '@typescript-eslint/parser': 5.10.1_eslint@8.13.0+typescript@4.6.3
       eslint: 8.13.0
       eslint-import-resolver-node: 0.3.4
-      eslint-import-resolver-typescript: 2.4.0_wyuo32abvxbalznpwet2hqmmxq
+      eslint-import-resolver-typescript: 2.4.0_b628ede801adc205e5afb127a3c18cbc
       eslint-plugin-import: 2.25.2_eslint@8.13.0
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.13.0
       eslint-plugin-react: 7.29.1_eslint@8.13.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.13.0
-      next: 12.1.5_ed2235bhhr2e4u2nn6cs4cgndy
+      next: 12.1.5_20f5adf4273c744e534d6f852e08cd1e
       typescript: 4.6.3
     transitivePeerDependencies:
       - supports-color
@@ -1077,7 +1077,7 @@ packages:
       resolve: 1.22.0
     dev: true
 
-  /eslint-import-resolver-typescript/2.4.0_wyuo32abvxbalznpwet2hqmmxq:
+  /eslint-import-resolver-typescript/2.4.0_b628ede801adc205e5afb127a3c18cbc:
     resolution: {integrity: sha512-useJKURidCcldRLCNKWemr1fFQL1SzB3G4a0li6lFGvlc5xGe1hY343bvG07cbpCzPuM/lK19FIJB3XGFSkplA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -2145,7 +2145,7 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /next/12.1.5_ed2235bhhr2e4u2nn6cs4cgndy:
+  /next/12.1.5_20f5adf4273c744e534d6f852e08cd1e:
     resolution: {integrity: sha512-YGHDpyfgCfnT5GZObsKepmRnne7Kzp7nGrac07dikhutWQug7hHg85/+sPJ4ZW5Q2pDkb+n0FnmLkmd44htIJQ==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -2508,7 +2508,7 @@ packages:
       scheduler: 0.21.0
     dev: false
 
-  /react-google-login/5.2.2_zpnidt7m3osuk7shl3s4oenomq:
+  /react-google-login/5.2.2_react-dom@18.0.0+react@18.0.0:
     resolution: {integrity: sha512-JUngfvaSMcOuV0lFff7+SzJ2qviuNMQdqlsDJkUM145xkGPVIfqWXq9Ui+2Dr6jdJWH5KYdynz9+4CzKjI5u6g==}
     peerDependencies:
       react: ^16 || ^17
@@ -2531,7 +2531,7 @@ packages:
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  /react-map-gl/7.0.10_ofvniecolwyiudbw4mzpzc722q:
+  /react-map-gl/7.0.10_mapbox-gl@2.8.1+react@18.0.0:
     resolution: {integrity: sha512-4rhkwVa2HG+Uro7sTaVCTRMIF8nhlLjQnDSTUvKkWBLyHdCsKyoKkNqTfVp05OjqDXhcdXuixUDcg8aDvbr4xw==}
     peerDependencies:
       mapbox-gl: '*'
