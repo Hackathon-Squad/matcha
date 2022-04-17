@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useInsertionEffect, useState } from "react";
 import { type NextPage } from "next";
 import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar";
@@ -16,28 +16,39 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
   const { user } = useUserContext();
 
   const [nearbyUsers, setNearbyUsers] = useState<APIUserResponse[]>(userData);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   useEffect(() => {
-    // const saveUsers = async () => {
-    //   const response: APIUserResponse = await fetch("http://localhost:5000/users/all", {
-    //     method: "GET",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }).catch((err) => {
-    //     console.error(err);
-    //   });
-    //   setNearbyUsers(response);
-    // }
-    // saveUsers()
+    const saveUsers = async () => {
+      const response: Response = await fetch("http://localhost:5000/user/all");
+      const data: APIUserResponse[] = await response.json();
+      console.log(data);
+
+      setNearbyUsers(data);
+    };
+    saveUsers();
   }, []);
 
-  const [currentUser, setCurrentUser] = useState<APIUserResponse>(
-    nearbyUsers[0]
-  );
+  useEffect(() => {
+    console.log(nearbyUsers);
+  }, [nearbyUsers]);
+
+  useEffect(() => {
+    if (nearbyUsers.length === 0) {
+      return;
+    }
+    setCurrentIndex(0);
+  }, [nearbyUsers]);
+
+  const nextUser = useCallback(() => {
+    setCurrentIndex((index) => (index + 1) % nearbyUsers.length);
+  }, [nearbyUsers]);
 
   const handleAccept = useCallback(async () => {
-    console.log(`${user?.name} matches with ${currentUser.name}!`);
+    console.log(
+      `${user?.name} matches with ${nearbyUsers[currentIndex]?.name}!`
+    );
+    nextUser();
 
     // const formData = {
     //   user1: user?.googleId,
@@ -53,12 +64,13 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
     //   }).catch((err) => {
     //     console.error(err);
     //   });
-  }, [currentUser, user]);
+  }, [currentIndex, nearbyUsers, user?.name]);
 
   const handleReject = useCallback(() => {
-    console.log(`${user?.name} rejects ${currentUser.name}!`);
+    console.log(`${user?.name} rejects ${nearbyUsers[currentIndex]?.name}!`);
     // Move on
-  }, [currentUser, user]);
+    nextUser();
+  }, [currentIndex, nearbyUsers, nextUser, user]);
 
   return (
     <>
@@ -76,7 +88,7 @@ const FindUsers: NextPage<FindUsersProps> = ({}) => {
         </button>
       </div>
       <SwipeOnUser
-        user={currentUser}
+        user={nearbyUsers[currentIndex]}
         onReject={handleReject}
         onAccept={handleAccept}
       />

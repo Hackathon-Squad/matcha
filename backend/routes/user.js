@@ -7,8 +7,16 @@ const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
 
 // Create new user
-recordRoutes.route("/user/add").post(function (req, response) {
+recordRoutes.route("/user/add").post(async function (req, response) {
   let db_connect = dbo.getDb();
+
+  let data = await db_connect.collection("users").findOne({ _id: req.body.id });
+
+  if (data) {
+    response.json(data);
+    return;
+  }
+
   let myobj = {
     _id: req.body.id,
     email: req.body.email,

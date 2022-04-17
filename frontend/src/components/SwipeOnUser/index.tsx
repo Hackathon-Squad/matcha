@@ -4,24 +4,29 @@ import { ImCross } from "react-icons/im";
 import { APIUserResponse } from "@/utils/types";
 
 const SwipeOnUser: React.FC<{
-  user: APIUserResponse;
+  user: APIUserResponse | null;
   onReject: () => void;
   onAccept: () => void;
 }> = ({ user, onReject, onAccept }) => {
+  if (!user) {
+    return null;
+  }
+  console.log("user", user);
+
   return (
     <div className={styles["find-users"]}>
       <img
         className={styles["find-user-img"]}
-        src={user.imageUrl}
+        src={user.img_url}
         alt={user.name}
       />
       <div className={styles["find-user-text-content"]}>
         <h1 className={styles["find-user-name"]}>{user.name} </h1>
         <h2 className={styles["find-user-likes"]}>
-          likes <b>coffee</b>
+          likes <b>{user.drinks.join(", ")}</b>
         </h2>
         <h2 className={styles["find-user-shops"]}>
-          frequents <b>starbucks, peets</b>
+          frequents <b>{user.location}</b>
         </h2>
       </div>
       <div className={styles["find-button-container"]}>

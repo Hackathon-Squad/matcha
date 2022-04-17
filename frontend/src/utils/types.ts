@@ -8,13 +8,13 @@ export interface GoogleUserResponse {
 }
 export interface APIUserResponse {
   email: string;
-  familyName: string;
-  givenName: string;
+  last_name: string;
+  first_name: string;
   googleId: string;
-  imageUrl: string;
+  img_url: string;
   name: string;
   drinks: string[];
-  favoriteStore: string;
+  location: string;
   matches: string[];
   discord: string;
   messenger: string;
