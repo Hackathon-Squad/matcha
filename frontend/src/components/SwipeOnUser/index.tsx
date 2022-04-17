@@ -21,7 +21,7 @@ const SwipeOnUser: React.FC<{
         alt={user.name}
       />
       <div className={styles["find-user-text-content"]}>
-        <h1 className={styles["find-user-name"]}>{user.name} </h1>
+        <h1 className={styles["find-user-name"]}>{user.first_name + " " + user.last_name} </h1>
         <h2 className={styles["find-user-likes"]}>
           likes <b>{user.drinks.join(", ")}</b>
         </h2>
