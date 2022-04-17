@@ -4,8 +4,11 @@ import mongodb from 'mongodb';
 import cors from 'cors';
 import users from './routes/users';
 
+require('dotenv').config();
+
 const app = express();
-const url = `mongodb+srv://faris:wheel@cluster0.y2bnz.mongodb.net`;
+const url = process.env.MONGODB_URI;
+const port = process.env.PORT || 4000; 
 
 app.use(cors());
 app.use(express.json());
@@ -16,6 +19,6 @@ mongoose.connect(url).then(() => {
   console.log('Connected to MongoDB database');
 });
 
-app.listen(4000, () => {
+app.listen(port, () => {
     console.log(`Starting server on port 4000`);
   });
