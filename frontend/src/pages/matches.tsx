@@ -19,23 +19,43 @@ const Match: NextPage = () => {
 
   const [matches, setMatches] = useState<GoogleUserResponse[]>(userData);
 
+  const [visible, setVisible] = useState<GoogleUserResponse[]>(matches);
+
+  const [searchInput, setSearchInput] = useState<string>("");
+
+  useEffect(() => {
+    setVisible(() => {
+      return matches.filter((user) =>
+        user.name.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    });
+  }, [matches, searchInput]);
+
   return (
     <>
       <Navbar />
       <div className={styles["matches"]}>
+        <h1 className={styles["matches-title"]}>Matches</h1>
         <div className={styles["order-div"]}>
-          <input type="text" className={styles["order-input"]} />
+          <input
+            value={searchInput}
+            onChange={(e) => {
+              setSearchInput(e.target.value);
+            }}
+            type="text"
+            className={styles["order-input"]}
+          />
           <button
             className={styles["close"]}
             onClick={() => {
+              // TODO:
               console.log("hi");
             }}
           >
             <AiOutlineSearch color="603d3d" />
           </button>
         </div>
-
-        {matches.map((match, index) => (
+        {visible.map((match, index) => (
           <UserCard
             key={`${index}`}
             name={match.name}
