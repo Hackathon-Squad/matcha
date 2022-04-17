@@ -9,11 +9,23 @@ const MapPage: NextPage = () => {
   const { setLocations } = useMapContext();
 
   useEffect(() => {
-    setLocations([{
-      type: 'coffee',
-      latitude: -117.23754811641379,
-      longitude: 32.881287611627904,
-    }])
+    setLocations([
+      {
+        type: 'coffee',
+        longitude: -117.23754811641379,
+        latitude: 32.881287611627904,
+      },
+      {
+        type: 'boba',
+        longitude: -117.2365382,
+        latitude: 32.8810575,
+      },
+      {
+        type: 'ice_cream',
+        longitude: -117.23856864,
+        latitude: 32.88141086,
+      },
+    ])
   }, [])
 
   return (
