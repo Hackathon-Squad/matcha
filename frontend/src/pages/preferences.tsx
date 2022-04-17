@@ -21,7 +21,7 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
     <>
       <Navbar />
       <div className={styles["preferences"]}>
-        <h3>What do you like to order?</h3>
+        <h3>what do you like to order?</h3>
         <button
           className={styles["add-more"]}
           onClick={() => {
@@ -32,7 +32,7 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
             });
           }}
         >
-          Add More
+          add more
         </button>
         {inputValues.map((input, index) => {
           return (
@@ -66,7 +66,7 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
             </div>
           );
         })}
-        <h3>Where would you like to pick up your order?</h3>
+        <h3>where would you like to pick up your order?</h3>
         {/* <div key={`${index}`} className={styles["order-div"]}>
               <input
                 key={`input-${index}`}
@@ -108,6 +108,7 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
         </div>
 
         <MapComponent />
+        <button className={styles["save-preferences"]}>save preferences</button>
       </div>
     </>
   );
