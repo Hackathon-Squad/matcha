@@ -1,11 +1,11 @@
 Model Information:
-* title:	Bananya 💤
-* source:	https://sketchfab.com/3d-models/bananya-5f772774ff0540f0aaac01072a719197
-* author:	CzernO (https://sketchfab.com/czernobog)
+* title:	Cat Banana
+* source:	https://sketchfab.com/3d-models/cat-banana-8bffe4341fa74fb3816a6208d5610678
+* author:	LightKyro (https://sketchfab.com/LightKyro)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Bananya 💤" (https://sketchfab.com/3d-models/bananya-5f772774ff0540f0aaac01072a719197) by CzernO (https://sketchfab.com/czernobog) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Cat Banana" (https://sketchfab.com/3d-models/cat-banana-8bffe4341fa74fb3816a6208d5610678) by LightKyro (https://sketchfab.com/LightKyro) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
