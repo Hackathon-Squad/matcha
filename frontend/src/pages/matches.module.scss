@@ -3,6 +3,11 @@
 .matches {
   width: 100%;
 
+  .matches-title {
+    margin: 2rem;
+    color: colors.$text;
+  }
+
   .order-div {
     padding: 0 0.5rem;
     width: 100%;

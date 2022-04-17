@@ -17,7 +17,7 @@ export const userData: GoogleUserResponse[] = [
     googleId: "105462767678059859699",
     imageUrl:
       "https://lh3.googleusercontent.com/a-/AOh14GjlAwYbM5lGcOzRGn7pStcn1yjw_uqsYOiQq4pnOX8=s96-c",
-    name: "Shirley Qi",
+    name: "Faris Qi",
   },
   {
     email: "kinz4ever@gmail.com",
@@ -26,7 +26,7 @@ export const userData: GoogleUserResponse[] = [
     googleId: "105462767678059859699",
     imageUrl:
       "https://lh3.googleusercontent.com/a-/AOh14GjlAwYbM5lGcOzRGn7pStcn1yjw_uqsYOiQq4pnOX8=s96-c",
-    name: "Shirley Qi",
+    name: "Nishant Qi",
   },
   {
     email: "kinz4ever@gmail.com",
@@ -35,7 +35,7 @@ export const userData: GoogleUserResponse[] = [
     googleId: "105462767678059859699",
     imageUrl:
       "https://lh3.googleusercontent.com/a-/AOh14GjlAwYbM5lGcOzRGn7pStcn1yjw_uqsYOiQq4pnOX8=s96-c",
-    name: "Shirley Qi",
+    name: "William1 Qi",
   },
   {
     email: "kinz4ever@gmail.com",
@@ -44,7 +44,7 @@ export const userData: GoogleUserResponse[] = [
     googleId: "105462767678059859699",
     imageUrl:
       "https://lh3.googleusercontent.com/a-/AOh14GjlAwYbM5lGcOzRGn7pStcn1yjw_uqsYOiQq4pnOX8=s96-c",
-    name: "Shirley Qi",
+    name: "William2 Qi",
   },
   {
     email: "kinz4ever@gmail.com",
