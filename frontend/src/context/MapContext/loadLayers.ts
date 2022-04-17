@@ -23,7 +23,7 @@ const models: Record<Model, ModelOptions> = {
     // obj: '/models/drivethru.glb',
     obj: '/models/coffee/scene.glb',
     type: 'gltf',
-    scale: 0.5,
+    scale: 1/2,
     units: 'meters',
     anchor: 'center',
     rotation: { x: 90, y: 180, z: 0 },

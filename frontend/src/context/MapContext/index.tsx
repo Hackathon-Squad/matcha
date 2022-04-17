@@ -8,6 +8,8 @@ import {
   type SetStateAction,
 } from "react";
 import { Map } from 'mapbox-gl'
+
+import { debounce } from '@/utils/debounce';
 import { loadLayers, type Location } from "./loadLayers";
 
 interface MapContextData {
@@ -36,9 +38,9 @@ export const MapProvider = ({ children }: MapProviderProps) => {
   const [locations, setLocations] = useState<Location[]>([]);
 
   useEffect(() => {
+    console.log('map effect triggered', { map, locations })
     if (map) {
-      console.log('updating map')
-      loadLayers(map, locations);
+      debounce(loadLayers, 2000)(map, locations);
     }
   }, [map, locations])
 

@@ -5,11 +5,13 @@ import ReactMapboxGl from "react-mapbox-gl";
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
 const Map = ReactMapboxGl({
-  accessToken: MAPBOX_TOKEN,
-});
+	accessToken: MAPBOX_TOKEN,
+	minZoom: 8,
+	maxZoom: 16,
+})
 
 const MapComponent = () => {
-  const { setMap } = useMapContext();
+	const { setMap } = useMapContext();
 
   return (
     <Map
@@ -23,9 +25,7 @@ const MapComponent = () => {
         width: "100%",
         transition: ".5s",
       }}
-      onStyleLoad={(map) => {
-        setMap(map);
-      }}
+      onStyleLoad={(map) => { setMap(map); }}
     />
   );
 };

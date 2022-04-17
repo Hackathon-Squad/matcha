@@ -6,7 +6,7 @@ import { useMapContext } from '@/context/MapContext';
 import Navbar from '@/components/Navbar';
 
 const MapPage: NextPage = () => {
-  const { setLocations } = useMapContext();
+  const { map, setLocations } = useMapContext();
 
   useEffect(() => {
     setLocations([
@@ -26,6 +26,10 @@ const MapPage: NextPage = () => {
         latitude: 32.88141086,
       },
     ])
+    // temp, for testing
+    setTimeout(() => {
+      map?.flyTo?.({ center: [-117, 33], essential: true });
+    }, 5000)
   }, [])
 
   return (
