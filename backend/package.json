@@ -8,7 +8,7 @@
     "build": "tsc",
     "clean": "rm -r build",
     "watch": "tsc -w",
-    "start": "concurrently --kill-others \"pnpm watch\" \"nodemon build/server/server.js\"",
+    "start": "nodemon ./server/server.js",  
     "serve": "node build/index.js"
   },
   "dependencies": {

@@ -1,7 +1,9 @@
-import express from 'express';
-import User from '../../models/userModel';
+// import express from 'express';
+// import User from '../../models/userModel';
 
+const express = require('express');
 const router = express.Router();
+const User = require('../../models/userModel');
 
 router.post('/createUser', async (req, res) => {
     const {email, first_name, last_name, img_url} = req.body
@@ -48,4 +50,4 @@ router.post('/updateShops/:id', async (req, res) => {
 });
 
 
-export default router;
+module.exports = router;
