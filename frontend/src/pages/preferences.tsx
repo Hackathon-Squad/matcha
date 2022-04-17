@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 
 import styles from "./preferences.module.scss";
 import { useState } from "react";
+import MapComponent from "@/components/Map";
 
 interface PreferencesProps {}
 
@@ -20,6 +21,18 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
       <Navbar />
       <div className={styles["preferences"]}>
         <h3>What do you like to order?</h3>
+        <button
+          className={styles["add-more"]}
+          onClick={() => {
+            setInputValues((current) => {
+              const newArray = [...current];
+              newArray.push("");
+              return newArray;
+            });
+          }}
+        >
+          Add More
+        </button>
         {inputValues.map((input, index) => {
           return (
             <div key={`${index}`} className={styles["order-div"]}>
@@ -52,20 +65,9 @@ const Preferences: NextPage<PreferencesProps> = ({}) => {
             </div>
           );
         })}
-        <button
-          className={styles["add-more"]}
-          onClick={() => {
-            setInputValues((current) => {
-              const newArray = [...current];
-              newArray.push("");
-              return newArray;
-            });
-          }}
-        >
-          Add More
-        </button>
         <h3>Where would you like to pick up your order?</h3>
         <input type="text" className={styles["location-input"]} />
+        <MapComponent />
       </div>
     </>
   );
