@@ -24,6 +24,14 @@ const userTemplate = new mongoose.Schema({
     shop_pref: {
         type: Array,
         required: true
+    },
+    swiped_right: {
+        type: Array,
+        required: true
+    },
+    swiped: {
+        type: Array,
+        required: true
     }
 })
 
