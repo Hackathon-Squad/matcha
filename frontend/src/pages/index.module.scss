@@ -1,6 +1,7 @@
 @use "@/styles/colors";
 
 .home {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
@@ -8,8 +9,14 @@
   justify-content: center;
   align-items: center;
 
+  .boba {
+    position: absolute;
+  }
+
+
   .logo {
     width: 20rem;
+    z-index: 1;
   }
 
   .home-title {
@@ -18,6 +25,7 @@
     font-size: 64px;
     line-height: 101px;
     color: colors.$matcha-latte;
+    z-index: 1;
   }
 
   .home-signin {
@@ -33,6 +41,7 @@
     text-align: center;
     cursor: pointer;
     transition: 0.25s ease-in-out;
+    z-index: 1;
 
     &:hover {
       transform: scale(1.04);

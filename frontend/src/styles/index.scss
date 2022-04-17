@@ -20,3 +20,112 @@ body {
   font-weight: 400;
   overflow-x: hidden;
 }
+
+
+@keyframes jiggle {
+  0% {
+    transform: rotate(random(360) + deg) translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+#boba1 {
+  top: 3rem;
+  left: 1rem;
+  animation: jiggle ((2 + random(10)) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba2 {
+  top: 1rem;
+  left: 9rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba3 {
+  top: 8rem;
+  left: 3rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+#boba4 {
+  top: 2rem;
+  right: 1rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba5 {
+  top: 7rem;
+  right: 7rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba6 {
+  top: 10rem;
+  right: 2rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+#boba7 {
+  bottom: 2rem;
+  left: 1rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba8 {
+  bottom: 5rem;
+  left: 7rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba9 {
+  bottom: 17rem;
+  left: 1rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+#boba10 {
+  bottom: 2rem;
+  right: 1rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba11 {
+  bottom: 10rem;
+  right: 3rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba12 {
+  bottom: 18rem;
+  right: 0.25rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba13 {
+  bottom: 1rem;
+  right: 6rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba14 {
+  bottom: 7rem;
+  left: 1rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba15 {
+  bottom: 1rem;
+  left: 10rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba16 {
+  bottom: 6rem;
+  left: 18rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
+
+#boba17 {
+  bottom: 10rem;
+  left: 5rem;
+  animation: jiggle (random(10) + s) ease-in-out infinite alternate-reverse;
+}
