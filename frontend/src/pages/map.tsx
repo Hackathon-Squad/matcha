@@ -12,8 +12,8 @@ const MapPage: NextPage = () => {
     setLocations([
       {
         type: "coffee",
-        longitude: -117.2936107,
-        latitude: 32.854644,
+        longitude: -117.2321544,
+        latitude: 32.8656116,
       },
       {
         type: "boba",
@@ -22,8 +22,8 @@ const MapPage: NextPage = () => {
       },
       {
         type: "ice_cream",
-        longitude: -117.2242428,
-        latitude: 32.8674475,
+        longitude: -117.2370285,
+        latitude: 32.9524167,
       },
     ]);
     // temp, for testing
